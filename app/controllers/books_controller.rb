@@ -16,7 +16,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    # findメソッドを用いて、データを取得　updateに必要
+    # findメソッドを用いて、データを取得する　updateに必要
     @book = Book.find(params[:id])
   end
 
