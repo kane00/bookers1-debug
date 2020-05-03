@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2017_03_07_140030) do
+ActiveRecord::Schema.define(version: 2020_05_03_080152) do
 
   create_table "books", force: :cascade do |t|
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    # titleのカラムがそもそもなかったので追加
+    # rails g migration AddTitleToBooks title:stringを追加
+    # rails db:migrateも忘れずに
+    t.string "title"
+  end
+
+  create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
